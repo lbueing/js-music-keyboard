@@ -26,7 +26,3 @@ $('body').keydown(function(event){
 });
 
 });
- //   if (event.key == ) {
- //     alert("hey you got an a!");
- //   }
- // });
