@@ -4,25 +4,26 @@ $(document).ready( function() {
   $('.instrument').on('click', 'button', function(event) {
     var keys = ['c', 'd', 'e', 'f', 'g', 'a', 'b'];
     for (var key of keys) {
-      if ($(this).html() == key) {
-        var note = document.getElementById(key + "Audio");
-        note.load();
-        note.play();
-      }
+      play($(this).html(), key);
     }
  });
-
 
 
 $('body').keydown(function(event){
   var keys = ['c', 'd', 'e', 'f', 'g', 'a', 'b'];
   for (var key of keys) {
-    if (event.key == key) {
-      var note = document.getElementById(key + "Audio");
-      note.load();
-      note.play();
-    }
+    play(event.key, key);
   }
 });
+
+
+var play = function(keyMatch, key) {
+  if (keyMatch == key) {
+    var note = document.getElementById(key + "Audio");
+    note.load();
+    note.play();
+  }
+}
+
 
 });
